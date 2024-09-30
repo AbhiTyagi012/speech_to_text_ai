@@ -197,17 +197,11 @@ class WhisperSingleControl(ft.UserControl):
             read_only=True,
         )
     def _build_histogram_result_field(self):
-        return ft.Container(
-        content=ft.Column(
-            [
-                ft.Text("Sentiment Score", style=ft.TextStyle(size=16, weight="bold")),
-            ],
-            spacing=10,
-        ),
-        padding=10,
-        border_radius=5,
-        alignment=ft.alignment.center,
-        bgcolor="lightgray",
+       return ft.Image(
+            src="C:\\Users\\Abhi Tyagi\\Desktop\\speech-to-text-ai\\whisper_ui\\tab_views\\HD-wallpaper-plain-black-black.jpg",
+            width=1255,
+            height=200,
+            fit=ft.ImageFit.COVER
         )
     #    return ft.Image(
     #     src="C:\\Users\\Abhi Tyagi\\Desktop\\speech-to-text-ai\\whisper_ui\\tab_views\\guitar-playing-sound-wave-ep14tobkv9af1nvo.gif",
@@ -215,7 +209,6 @@ class WhisperSingleControl(ft.UserControl):
     #     height=200,
     #     fit=ft.ImageFit.COVER
     # )
-
 
     
 
@@ -285,7 +278,7 @@ class WhisperSingleControl(ft.UserControl):
         self.recognize_button.disabled = True
         self.file_button.disabled = True
         self.model_dropdown.disabled = True
-        self.histogram_result_field.Container = None
+        self.histogram_result_field.src = "C:\\Users\\Abhi Tyagi\\Desktop\\speech-to-text-ai\\whisper_ui\\tab_views\\guitar-playing-sound-wave-ep14tobkv9af1nvo.gif"
         self.histogram_result_field.update()  # Update the GUI
         self.update()
 
@@ -295,13 +288,7 @@ class WhisperSingleControl(ft.UserControl):
         self.file_button.disabled = False
         self.model_dropdown.disabled = False
         self.time_processed = self.DEFAULT_TIME_VALUE
-        self.histogram_result_field.content = ft.Column(
-        [
-            ft.Text("Sentiment Score", style=ft.TextStyle(size=16, weight="bold")),
-            ft.Text("Positive", style=ft.TextStyle(size=14, color="green")),
-        ],
-        spacing=10,
-        )
+        self.histogram_result_field.src = "C:\\Users\\Abhi Tyagi\\Desktop\\speech-to-text-ai\\whisper_ui\\tab_views\\HD-wallpaper-plain-black-black.jpg"
         self.histogram_result_field.update()
         if is_success:
             self.page.bottom_sheet.content = self._build_bottom_sheet_content(
